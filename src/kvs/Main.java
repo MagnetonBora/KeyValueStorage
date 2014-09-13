@@ -1,5 +1,9 @@
 package kvs;
 
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map;
+
 public class Main {
 
     public static void enterMessage() {
@@ -9,9 +13,11 @@ public class Main {
 
     public static void basicUseCase() {
         CRUD db = new CRUD();
-        db.add(new Record(1, "one"));
-        db.add(new Record(2, "two"));
-        db.add(new Record(3, "three"));
+
+        db.add(new Record(1, "one"))
+          .add(new Record(2, "two"))
+          .add(new Record(3, "three"));
+
         System.out.print(db);
     };
 
@@ -20,7 +26,8 @@ public class Main {
         enterMessage();
 //        basicUseCase();
 
-        
+        Item item = new Item("one", new Item("foo", -1));
+        System.out.print(item);
 
     }
 }

@@ -3,6 +3,27 @@ package kvs;
 import java.util.*;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+class Item {
+
+    private Map<String, Object> item = null;
+
+    public Item() {
+        super();
+        item = new HashMap<String, Object>();
+    };
+
+    public Item(String key, Object value) {
+        item = new HashMap<String, Object>();
+        item.put(key, value);
+    };
+
+    @Override
+    public String toString() {
+        return item.toString();
+    };
+
+}
+
 class Record {
 
     private int id;
@@ -40,8 +61,9 @@ class CRUD {
         storage = new ArrayList<Record>();
     };
 
-    public void add(Record record) {
+    public CRUD add(Record record) {
         storage.add(record);
+        return this;
     };
 
     public void get() throws NotImplementedException {
